@@ -7,9 +7,10 @@
 The folder structure should look like this:
 ```
 +--Root
-| +--avybe
+| +--Djangogram
 | +--venv
+      
 ```
-- Start the virtual evironment by running `source venv/bin/activate` in the root folder of the project
-- `cd` into the `avybe` directory and run `pip install -r requirements.txt`
+- Start the virtual evironment by running `source venv/bin/activate` in the root folder
+- `cd` into the `Djangogram` directory and run `pip install -r requirements.txt`
 - run `python manage.py runserver` to start the server on port 8000
