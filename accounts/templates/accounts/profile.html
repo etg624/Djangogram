@@ -1,23 +1,24 @@
-{% extends 'base.html' %} {% block content %}
-<div>
-  {% if is_current_user %}
-    <h1>{{user}}</h1>
-  {% else %}
-    <h1>Requested User {{ requested_user }}</h1>
-  {% endif %} 
-  {% if requested_user.profile_pic %}
-    <img src="{{ requested_user.profile_pic.url }}" alt="" />
-  {% endif %} 
+{% extends 'base.html' %} 
+{% block content %}
+  <div>
+    {% if is_current_user %}
+      <h1>{{user}}</h1>
+    {% else %}
+      <h1>Requested User {{ requested_user }}</h1>
+    {% endif %} 
+    {% if requested_user.profile_pic %}
+      <img src="{{ requested_user.profile_pic.url }}" alt="" />
+    {% endif %} 
 
-  {% if is_current_user %}
-    <form method="post" action="" enctype="multipart/form-data">
-      {% csrf_token %} 
-      {{ form.as_p }} 
-      {% if form.errors %}
-        <p>{{ form.errors }}</p>
-      {% endif %}
-      <input type="submit" value="Edit" />
-    </form>
-  {% endif %}
-</div>
+    {% if is_current_user %}
+      <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        {% if form.errors %}
+          <p>{{ form.errors }}</p>
+        {% endif %}
+        <input type="submit" value="Edit" />
+      </form>
+    {% endif %}
+  </div>
 {% endblock %}
