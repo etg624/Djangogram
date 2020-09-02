@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+  <h1>Sigup</h1>
+  <form action="/signup/" method="post" enctype="multipart/form-data">
+    {% if form.errors %} {% endif %} {% csrf_token %} {{ form.as_p }}
+    <input type="submit" value="Sigup" />
+    <p>{{ form.errors }}</p>
+  </form>
+</div>
+{% endblock %}
